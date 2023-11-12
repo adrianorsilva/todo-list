@@ -10,7 +10,8 @@ function adicionarTarefa() {
         alert('Não é possível adicionar tarefas em branco')
         return
     }
-    minhaListaDeItens.push({
+    else{
+         minhaListaDeItens.push({
         tarefa: input.value,
         concluida: false,
     })
@@ -18,6 +19,8 @@ function adicionarTarefa() {
     input.value = ''
 
     mostarTarefa()
+    }
+   
 
 }
 
