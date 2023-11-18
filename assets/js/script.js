@@ -1,13 +1,13 @@
-const botao = document.querySelector('.btn-add-task');
-const input = document.querySelector('.input-task');
-let listaCompleta = document.querySelector('.list-task');
+const botao = document.querySelector('.btn-add-task')
+const input = document.querySelector('.input-task')
+let listaCompleta = document.querySelector('.list-task')
 
 
 let minhaListaDeItens = [];
 
 function adicionarTarefa() {
     if(input.value == ''){
-        alert('Não é possível adicionar tarefas em branco');
+        alert('Não é possível adicionar tarefas em branco')
         return;
     }
     else{
@@ -16,9 +16,9 @@ function adicionarTarefa() {
         concluida: false,
     })
 
-    input.value = '';
+    input.value = ''
 
-    mostarTarefa();
+    mostarTarefa()
     }
    
 
@@ -27,7 +27,7 @@ function adicionarTarefa() {
 
 
 function mostarTarefa() {
-    let novaLi = '';
+    let novaLi = ''
     minhaListaDeItens.forEach((item, index) => {
         novaLi = novaLi + `<li class="task ${item.concluida && "done"}">
         <img src="./assets/img/check.png" alt="check-na-tarefa" onclick="concluirTarefa(${index})">
@@ -37,19 +37,19 @@ function mostarTarefa() {
         `
     })
 
-    listaCompleta.innerHTML = novaLi;
+    listaCompleta.innerHTML = novaLi
     //Salvar os itens da tarefa no LocalStorage
-    localStorage.setItem('lista', JSON.stringify(minhaListaDeItens));
+    localStorage.setItem('lista', JSON.stringify(minhaListaDeItens))
 }
 
 function deletarTarefa(index) {
-    minhaListaDeItens.splice(index, 1);
-    mostarTarefa();
+    minhaListaDeItens.splice(index, 1)
+    mostarTarefa()
 }
 
 function concluirTarefa(index) {
-    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida;
-    mostarTarefa();
+    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida
+    mostarTarefa()
 }
 
 
@@ -59,13 +59,13 @@ function concluirTarefa(index) {
 // Recarregar itens do localstorage
 
 function recarregarTarefas() {
-    const tarefasDoLocalStorage = localStorage.getItem('lista');
-    minhaListaDeItens = JSON.parse(tarefasDoLocalStorage);
+    const tarefasDoLocalStorage = localStorage.getItem('lista')
+    minhaListaDeItens = JSON.parse(tarefasDoLocalStorage)
 
-    mostarTarefa();
+    mostarTarefa()
 
 }
 
 recarregarTarefas();
-botao.addEventListener('click', adicionarTarefa);
+botao.addEventListener('click', adicionarTarefa)
 
