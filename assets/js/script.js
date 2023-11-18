@@ -35,21 +35,21 @@ function mostarTarefa() {
         <img src="./assets/img/trash.png" alt="check-na-lixeira" onclick="deletarTarefa(${index})">
     </li>
         `
-    })
+    });
 
-    listaCompleta.innerHTML = novaLi
+    listaCompleta.innerHTML = novaLi;
     //Salvar os itens da tarefa no LocalStorage
-    localStorage.setItem('lista', JSON.stringify(minhaListaDeItens))
+    localStorage.setItem('lista', JSON.stringify(minhaListaDeItens));
 }
 
 function deletarTarefa(index) {
-    minhaListaDeItens.splice(index, 1)
-    mostarTarefa()
+    minhaListaDeItens.splice(index, 1);
+    mostarTarefa();
 }
 
 function concluirTarefa(index) {
-    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida
-    mostarTarefa()
+    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida;
+    mostarTarefa();
 }
 
 
