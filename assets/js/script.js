@@ -27,7 +27,7 @@ function adicionarTarefa() {
 
 
 function mostarTarefa() {
-    let novaLi = ''
+    let novaLi = '';
     minhaListaDeItens.forEach((item, index) => {
         novaLi = novaLi + `<li class="task ${item.concluida && "done"}">
         <img src="./assets/img/check.png" alt="check-na-tarefa" onclick="concluirTarefa(${index})">
