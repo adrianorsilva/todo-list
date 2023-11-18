@@ -27,7 +27,7 @@ function adicionarTarefa() {
 
 
 function mostarTarefa() {
-    let novaLi = '';
+    let novaLi = ''
     minhaListaDeItens.forEach((item, index) => {
         novaLi = novaLi + `<li class="task ${item.concluida && "done"}">
         <img src="./assets/img/check.png" alt="check-na-tarefa" onclick="concluirTarefa(${index})">
@@ -35,9 +35,9 @@ function mostarTarefa() {
         <img src="./assets/img/trash.png" alt="check-na-lixeira" onclick="deletarTarefa(${index})">
     </li>
         `
-    });
+    })
 
-    listaCompleta.innerHTML = novaLi;
+    listaCompleta.innerHTML = novaLi
     //Salvar os itens da tarefa no LocalStorage
     localStorage.setItem('lista', JSON.stringify(minhaListaDeItens));
 }
@@ -48,8 +48,8 @@ function deletarTarefa(index) {
 }
 
 function concluirTarefa(index) {
-    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida;
-    mostarTarefa();
+    minhaListaDeItens[index].concluida = !minhaListaDeItens[index].concluida
+    mostarTarefa()
 }
 
 
