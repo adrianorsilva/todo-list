@@ -35,7 +35,7 @@ function mostarTarefa() {
         <img src="./assets/img/trash.png" alt="check-na-lixeira" onclick="deletarTarefa(${index})">
     </li>
         `
-    })
+    });
 
     listaCompleta.innerHTML = novaLi
     //Salvar os itens da tarefa no LocalStorage
